@@ -1,7 +1,7 @@
 # 2.4-GHz-ISM-antennas
 Benchmark test of widely available 2.4 GHz ISM band antennas
 
-Heinrich Diesinger
+Heinrich Diesinger,
 Univ Lille, Univ Polytech Hauts France, CNRS, Centrale Lille, Junia, Inst Elect Microelect & Nanotchnol (IEMN) UMR 8520, F-59000 Lille, France
 
 The objective of this study is the comparison of a number of antennas for the 2.4 GHz ISM band, suitable for WiFi, Bluetooth, BLE, LoRa 2.4 GHz, QO-100 Satcom, FPV, that are either commercially available or can be built with moderate effort. The primary issues are the safe matching of the antenna to a transceiver, accuracy of the vendor specifications, and performance comparison between commercial antennas and their DIY competitors.
