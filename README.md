@@ -288,7 +288,9 @@ The multi-element Yagi antenna should be optimizeable since 11 dBi are readily a
 Regarding the patch array, it is noteworthy that nowadays the most prominent antenna, the Starlink terminal, comes with 1200 elements whereas our array has only four, leading us to think that there is room to the top. Before comparing our 14 dBi antenna to the Starlink terminal, it has to be noted though that the latter is a phased array featuring beamforming which we would not require, and has a large number of radio frontend modules (FEM), since the Ku-band signal would be difficult to distribute over the array. Instead, a common clock signal is distributed to the FEMs.
 
 https://www.microwaves101.com/encyclopedias/starlink
+
 https://hackaday.com/2020/11/25/literally-tearing-apart-a-spacex-starlink-antenna/
+
 https://www.youtube.com/watch?v=h6MfM8EFkGg&t=2s
 
 ![image](https://user-images.githubusercontent.com/96028811/211608725-792d7402-6364-4d87-a6a2-fd4488edde9d.png)
@@ -307,7 +309,7 @@ For anything requiring more gain, the questions reduce to which antennas is the 
 Alternatives to parabolic dish : in the last years the parabolic dish becomes increasingly replaced by flat panels (mostly known under the brandname Selfsat). These are by no means phased arrays of patch antennas nor active antennas, but merely a parabolic mirror that is made flat in comparable way a bulk lens is transformed into a Fresnel lens, still containing a sort of LNB located at their back, however without the horn antenna in some cases :
 http://www.satmagazine.com/story.php?number=617289206
 
-![image](https://user-images.githubusercontent.com/96028811/211608808-97af7e21-7c00-454f-a919-7ea221665da6.png)   ![image](https://user-images.githubusercontent.com/96028811/211608849-fb606ae8-1695-4bb0-9729-222f2f357fd3.png)
+![selfsat](https://user-images.githubusercontent.com/96028811/211609753-7a5daf3f-4c82-41bd-8649-3735e40b790b.jpg)   ![image](https://user-images.githubusercontent.com/96028811/211608849-fb606ae8-1695-4bb0-9729-222f2f357fd3.png)
 
 As opposed to the parabolic dish, it is however more than uncertain that such a reflector, designed for TV reception in the X..Ku band, is equally suitable for 2.4 GHz operation. In particular a 2.4 GHz feeder would not fit instead of the 10.7 GHz LNB due to its dimensions. 
 
