@@ -255,24 +255,68 @@ Antennas that are marked (a), (b), (c) are available as several specimen.
 
 
 The results : raw signal strengths
- 
+
 Received power :
 
-Antenna						RSSI “V“		RSSI “H“
+ ![rawdatatable](https://user-images.githubusercontent.com/96028811/211608036-65d3721e-0a6b-4f72-9526-837548d22fdf.jpg)
 
-Short rubber, nominal gain 2 dBi: 			-36.9 dBm		-52 dBm (noise)
-Patch QO-100 Poty: 					-25.8 dBm		-30.4 dBm
-Patch QO-100 with 22 mm washers  (a) 		-36.4 dBm		-34.8 dBm
-Patch QO-100 with 22 mm washers  (b)		-28.1 dBm		-28.3 dBm
-Patch RHCP downsized from Inmarsat (a)		-28.6 dBm		-28.3 dBm
-Patch RHCP downsized from Inmarsat (b)		-28.6 dBm		-31.4 dBm
-Patch RHCP downsized from Inmarsat (c)		-27.7 dBm		-31.0 dBm
-Yagi 50 cm, alu: advertised gain 16..18 dBi 		-23.7 dBm
-Yagi printed: nominal gain up to 10.5 dBi 		-25.5 dBm
-Quad patch array: nominal gain 14 dBi		-21.7 dBm
-Cantenna 83 mm:					-28.1 dBm
-Cantenna 97 mm: 					-24.6 dBm
+Discussion
+
+The winner is the quad patch array, followed by the aluminum Yagi. After the test a 2nd patch array was received that does not have the same excellent VSWR value as the first, with no obvious reason, so it must be stated that this antenna might also be subject to tolerance/variations and possibly we had just drawn a perfect specimen. Should the VSWR deteriorate from 1 to 3, this would result in 50 % of reflected voltage amplitude equal to 25 % reflected power, meaning a loss of -1.25 dB in power and gain.
+
+The fact that the winning antenna has 15 dB more gain than the 2 dBi rubber antennas, and that it is advertised as 14 dBi antenna, probably means that the rubber antenna does not have the 2 dBi of a quarter wave because it contains dissipative elements. Otherwise the 14 dBi would rather be dBd, but it is unlikely that the vendor would be understating his antenna. So we shall use the patch antenna as the reference with its nominal 14.0 dBi and obtain the absolute gain of all other antennas relative to it.
+
+The poor value of  specimen 'patch QO-100 with 22 mm washers  (a)' of -36.4 dBm is not clear. It has to be verified if there was a connection issue with the cable or a reading error occured (-36 instead of -26). The value shall for the moment be discarded.
+
+The aluminum Yagi antenna has potential for improvement. In a good Yagi antenna the elements are typically of different size and differently spaced, and the intermittent contact of the elements plugged loosely into the boom are possibly a source of loss and fluctuation. The width of the boom is not at all negligible with respect to the element length. The diameter of the passive elements seems to be excessive with respect to their spacing. From VHF and UHF we do know that a gain of 11 dBi can be obtained with a 8-element Yagi. Therefore, the commercial 17-element Yagi does not seem to make good use of its material and lack behind the state-of-art.
+
+Remark about circular polarized antennas and polarization loss : The circular polarized patch antennas were measured here against a linear transmitting antenna. It is known that a circular antenna suffers from 3 dB polarization loss if used against a linear antenna and vice versa. Therefore, in the following gain table, in the case of the two antennas that have almost identical gains in V and H direction, we assume perfect circular polarization and shall add another 3 dB to obtain the gain that would be obtained against a circularly polarized transmitter and put it into the column labeled «gain CC». However for the antennas that have a strong preferential axis and hence elliptical polarisation (at best...), the computation of such a gain value would be more difficult and is therefore not done.
+
+![relativegaintable](https://user-images.githubusercontent.com/96028811/211608572-93b9adf3-530b-4f96-ba22-432dbcf09079.jpg)
 
 
+Conclusion 
+
+With the winning quad patch array set do 14 dBi, the relative gains of the other antennas are given in the above table. Once again, although number 2 in absolute gain, the Alu Yagi antenna is disappointing for its 17 elements, and overall it is noteworthy that even the best commercial antenna (Quad patch) is only 3 dB above the bigger of the 2 cantennas. The circularly polarized simple patch antennas are predicetd to reach 10 dBi by adding the 3 dB polarization loss. This risks to be exaggerated because single patch antennas are expected to have a gain between 6 and 9 dBi. Hence it can be suspected that their polarization is slightly elliptical/diagonal rather than perfectly circular and the received power under exposure to linear polarized waves had been attenuated by less than 3 dB polarization loss. These antennas may still be quite interesting for air- and spacecraft where a linear polarization cannot be controlled, in particular it may be interesting to minimize weight and size of an onboard antenna e.g. by making a version with metal films on a polystyrene spacer, and using it against a ground station antenna that combines several circular patch antennas in an array. The printed Yagi antenna performs fairly well for its compact dimensions and is expected to give the most reproducible result also with respect to its low VSWR when it is about protecting the transceiver. The 97 mm cantenna is the champion of performance price/ratio.
+By the way, the quad patch array antenna seems to be most popular in municipal CCTV networks where video signals are transferred between lighting poles and end up in the townhall.
 
 
+Perspectives
+
+The multi-element Yagi antenna should be optimizeable since 11 dBi are readily achievable by 8 elements and hence 17 elements should alllow to approach the advertised 16 dBi if it was more carefully designed. 
+
+Regarding the patch array, it is noteworthy that nowadays the most prominent antenna, the Starlink terminal, comes with 1200 elements whereas our array has only four, leading us to think that there is room to the top. Before comparing our 14 dBi antenna to the Starlink terminal, it has to be noted though that the latter is a phased array featuring beamforming which we would not require, and has a large number of radio frontend modules (FEM), since the Ku-band signal would be difficult to distribute over the array. Instead, a common clock signal is distributed to the FEMs.
+
+https://www.microwaves101.com/encyclopedias/starlink
+https://hackaday.com/2020/11/25/literally-tearing-apart-a-spacex-starlink-antenna/
+https://www.youtube.com/watch?v=h6MfM8EFkGg&t=2s
+
+![image](https://user-images.githubusercontent.com/96028811/211608725-792d7402-6364-4d87-a6a2-fd4488edde9d.png)
+
+Similar to it is the competing project Kuiper by Amazon that is however supposed to work in the Ka band rather than the Ku band :
+https://www.aboutamazon.com/news/tag/project-kuiper
+Before those systems were targeting large scale deployment for rural area coverage and became known to the public via Starlink and 5G, phased arrays with beam steering and beam forming were currently used in satellite communication and solutions were developed for broadband internet for airplanes, by Honeywell-Jetwave/Inmarsat :
+https://aerospace.honeywell.com/us/en/about-us/blogs/ka-band-vs-ku-band-the-difference-between-ku-and-ka
+and the competitor SES by Thales Alenia Space :
+https://www.satellitetoday.com/launch/2019/02/26/ses-12-satellite-now-operational/
+
+Back to Bluetooth/Wifi/FPV/LoRa : A purely passive array without multiple FEMs might reach its limits at much less than 1200 elements since a large number of elements and a wide frequency coverage get into conflict with a purely passive feeder network, and at some point the multiple radio frontend is required even without the need for beamforming/beamsteering. Anyway, a 4x4 or 5x5 array approaching 20 dBi would probably be feasible without too much change of the technology.
+
+For anything requiring more gain, the questions reduce to which antennas is the most suitable feeder for a parabolic dish reflector, possibly how patch and cantenna compare to a helical antenna as a dish feeder, and what are the alternatives to the parabolic dish itself. For the feeders we do not expect big differences as long as the reflector is illuminated evenly without much spillover.
+
+Alternatives to parabolic dish : in the last years the parabolic dish becomes increasingly replaced by flat panels (mostly known under the brandname Selfsat). These are by no means phased arrays of patch antennas nor active antennas, but merely a parabolic mirror that is made flat in comparable way a bulk lens is transformed into a Fresnel lens, still containing a sort of LNB located at their back, however without the horn antenna in some cases :
+http://www.satmagazine.com/story.php?number=617289206
+
+![image](https://user-images.githubusercontent.com/96028811/211608808-97af7e21-7c00-454f-a919-7ea221665da6.png)   ![image](https://user-images.githubusercontent.com/96028811/211608849-fb606ae8-1695-4bb0-9729-222f2f357fd3.png)
+
+As opposed to the parabolic dish, it is however more than uncertain that such a reflector, designed for TV reception in the X..Ku band, is equally suitable for 2.4 GHz operation. In particular a 2.4 GHz feeder would not fit instead of the 10.7 GHz LNB due to its dimensions. 
+
+
+Disclaimer
+
+No warranty of correctness or suitability for a particular purpose is given. Due to fluctuations of values of similar antennas from different manufacturers and even among different specimen from the same manufacturer, it is recommended to perform measurements for each individual implementation. It is the sole responisbility of the user to comply with local legislation regarding spectrum allocation and authorized RF power.
+
+
+Acknowledgement
+
+This study has been performed in support of the Bluetooth Low energy project «  BLE transceiver based on the Semtech SX1281 radio module and the ESP8266 » published in the same GitHub repository. Fruitful discussions with Prof. Guillaume Ferré and Marwane Rezzouki from ENSEIRB-MATMECA, Laboratoire IMS, UMR 5218 CNRS, are gratefully acknowledged.
